@@ -138,7 +138,7 @@ public class LibraryController {
     }
 
     public void getBookToReader() {
-        //textArea.append("Enter id of reader that you want to add book:");
+        textArea.setText(" ");
         textArea.append(library.showReaders());
         String idReaderToAddStr = JOptionPane.showInputDialog(parent,
                 "Enter id of reader that you want to add book:", null);
@@ -178,9 +178,10 @@ public class LibraryController {
     }
 
     public void showListOfBooksReaders() {
+        textArea.setText(" ");
         for (int i = 0; i < library.getCountOfReaders(); i++) {
             for (int j = 0; j < library.returnElementFromReaders(i).getCountOfBooks(); j++)
-                library.showBook(library.returnElementFromReaders(i).returnElementFromReaderBooks(j));
+                textArea.append(library.showBook(library.returnElementFromReaders(i).returnElementFromReaderBooks(j)));
         }
     }
 

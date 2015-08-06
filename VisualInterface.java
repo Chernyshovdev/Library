@@ -20,9 +20,10 @@ public class VisualInterface extends JFrame {
     private JButton showNewBooksButton;
     private JButton searchAuthorButton;
     private JButton addToBlackListButton;
-    private JButton showBlackList;
+    private JButton showBlackListButton;
     private JButton getBookToReader;
     private JButton deleteReaderButton;
+    private JButton showListOfBooksReadersButton;
     private JTextArea textArea = new JTextArea();
     LibraryController controller = new LibraryController(textArea);
 
@@ -61,34 +62,6 @@ public class VisualInterface extends JFrame {
         });
         buttonPanel.add(addBookButton);
 
-
-        addReaderButton = new JButton("Add reader");
-        addReaderButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.addReaderButton();
-            }
-        });
-        buttonPanel.add(addReaderButton);
-
-        deleteReaderButton = new JButton("Delete reader");
-        deleteReaderButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.deleteReaderButton();
-            }
-        });
-        buttonPanel.add(deleteReaderButton);
-
-        getBookToReader = new JButton("Get book to reader");
-        getBookToReader.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.getBookToReader();
-            }
-        });
-        buttonPanel.add(getBookToReader);
-
         showBooksButton = new JButton("Show books");
         showBooksButton.addActionListener(new ActionListener() {
             @Override
@@ -107,6 +80,52 @@ public class VisualInterface extends JFrame {
         });
         buttonPanel.add(showNewBooksButton);
 
+        addReaderButton = new JButton("Add reader");
+        addReaderButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.addReaderButton();
+            }
+        });
+        buttonPanel.add(addReaderButton);
+
+        showReaderButton = new JButton("Show readers");
+        showReaderButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.showReaderButton();
+            }
+        });
+        buttonPanel.add(showReaderButton);
+
+        getBookToReader = new JButton("Get book to reader");
+        getBookToReader.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.getBookToReader();
+            }
+        });
+        buttonPanel.add(getBookToReader);
+
+        deleteReaderButton = new JButton("Delete reader");
+        deleteReaderButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.deleteReaderButton();
+            }
+        });
+        buttonPanel.add(deleteReaderButton);
+
+
+        showListOfBooksReadersButton=new JButton("Show list of readers book");
+        showListOfBooksReadersButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.showListOfBooksReaders();
+            }
+        });
+        buttonPanel.add(showListOfBooksReadersButton);
+
         searchAuthorButton = new JButton("Search by author");
         searchAuthorButton.addActionListener(new ActionListener() {
             @Override
@@ -116,14 +135,6 @@ public class VisualInterface extends JFrame {
         });
         buttonPanel.add(searchAuthorButton);
 
-        showReaderButton = new JButton("Show reader");
-        showReaderButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.showReaderButton();
-            }
-        });
-        buttonPanel.add(showReaderButton);
 
         addToBlackListButton = new JButton("Add reader to blacklist");
         addToBlackListButton.addActionListener(new ActionListener() {
@@ -134,14 +145,14 @@ public class VisualInterface extends JFrame {
         });
         buttonPanel.add(addToBlackListButton);
 
-        showBlackList = new JButton("Show blacklist");
-        showBlackList.addActionListener(new ActionListener() {
+        showBlackListButton = new JButton("Show blacklist");
+        showBlackListButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.showBlacklistButton();
             }
         });
-        buttonPanel.add(showBlackList);
+        buttonPanel.add(showBlackListButton);
 
         exitButton = new JButton("Exit");
         //exitButton.setBackground(Color.RED);
