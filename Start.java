@@ -6,5 +6,6 @@ package homework7.library;
 public class Start {
     public static void main(String[] args) {
         VisualInterface visualInterface=new VisualInterface();
+        visualInterface.setVisible(true);
     }
 }

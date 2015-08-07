@@ -11,11 +11,12 @@ import java.util.ArrayList;
  * Created by Razer on 10.06.15.
  */
 public class Library {
-    String path = "/Users/johnsmith/IdeaProjects/ACO3/src/homework7/library/" + NAME_OF_FILE;
+    String path = "/Users/johnsmith/IdeaProjects/ACO3/src/homework7/library/" + BOOKS_FILE;
     ParserManager manager = new ParserManager();
     private ArrayList<Reader> readers = new ArrayList<Reader>();
     private ArrayList<Book> books = new ArrayList<Book>();
-    public static final String NAME_OF_FILE = "Library.txt";
+    public static final String BOOKS_FILE = "Books.txt";
+    public static final String READER_FILE="Readers.txt";
 
 
     public void addReaderToLibrary(Reader read) {

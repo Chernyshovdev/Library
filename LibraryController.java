@@ -158,6 +158,15 @@ public class LibraryController {
         textArea.append("Book add successful");
     }
 
+    public void showListOfBooksSpecificReader(){
+        textArea.setText(" ");
+        textArea.append(library.showReaders());
+        String idSTR  = JOptionPane.showInputDialog(parent,
+                "Enter id of Reader to show his book:", null);
+        int id=Integer.parseInt(idSTR);
+        library.returnElementById(id).showReaderBooks();
+    }
+
     public void deleteReaderButton() {
         if (!notEmptyReaders()) {
             textArea.setText(" ");

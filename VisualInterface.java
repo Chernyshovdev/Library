@@ -24,6 +24,7 @@ public class VisualInterface extends JFrame {
     private JButton getBookToReader;
     private JButton deleteReaderButton;
     private JButton showListOfBooksReadersButton;
+    private JButton showListOfBooksSpecificReader;
     private JTextArea textArea = new JTextArea();
     LibraryController controller = new LibraryController(textArea);
 
@@ -35,7 +36,6 @@ public class VisualInterface extends JFrame {
     private void init() {
         setSize(600, 400);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
         setupTextArea();
         setupButtons();
         controller.readFromFile();
@@ -117,11 +117,20 @@ public class VisualInterface extends JFrame {
         buttonPanel.add(deleteReaderButton);
 
 
-        showListOfBooksReadersButton=new JButton("Show list of readers book");
+        showListOfBooksReadersButton=new JButton("Show list of taken book");
         showListOfBooksReadersButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 controller.showListOfBooksReaders();
+            }
+        });
+        buttonPanel.add(showListOfBooksReadersButton);
+
+        showListOfBooksSpecificReader=new JButton("Show list of specific readers book");
+        showListOfBooksReadersButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                controller.showListOfBooksSpecificReader();
             }
         });
         buttonPanel.add(showListOfBooksReadersButton);
